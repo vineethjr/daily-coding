@@ -1,0 +1,32 @@
+name: Daily Coding Question
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # runs daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Add daily problem
+        run: |
+          echo "### 📅 $(date '+%Y-%m-%d')" >> problems.md
+          echo "- 🧠 Problem: Solve a DSA question (Array / String / DP)" >> problems.md
+          echo "- 💡 Approach: " >> problems.md
+          echo "- 💻 Code: " >> problems.md
+          echo "" >> problems.md
+
+      - name: Commit & Push
+        run: |
+          git config --global user.name "vineethjr"
+          git config --global user.email "your-email@example.com"
+          git add .
+          git commit -m "daily coding update"
+          git push
