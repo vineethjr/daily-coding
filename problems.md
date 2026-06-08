@@ -281,3 +281,8 @@ Only one valid answer exists.
 - 💡 Approach: 
 - 💻 Code: 
 
+### 📅 2026-06-08
+- 🧠 Problem: Solve a DSA question (Array / String / DP)
+- 💡 Approach: 
+- 💻 Code: 
+
